@@ -1,5 +1,5 @@
 [workspace]
 
 members = [
-  "00_fps/city_scene",
+  "00_fps/sceneloader_demo",
 ]
