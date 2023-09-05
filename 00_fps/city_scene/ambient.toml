@@ -1,0 +1,5 @@
+[package]
+id = "city_scene"
+name = "city_scene"
+version = "0.0.1"
+content = { type = "Playable" }
