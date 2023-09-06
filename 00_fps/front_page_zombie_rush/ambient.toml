@@ -1,0 +1,25 @@
+[package]
+content = {type = "Playable"}
+id = "front_page_zombie_rush"
+name = "Zombie Rush"
+version = "0.0.1"
+
+[dependencies]
+basic_character_animation = {deployment = "7GO4bqu6dZAbZqezzD4dbb"}
+fpsaudio = {deployment = "1yBMSFSb0cFIQKJFemhBhE"}
+fpsmodel = {deployment = "34OOxq63m3dt8quszQCJn2"}
+fpsmovement = {deployment = "15tAcObvE1rX55R5NgEedP"}
+fpsrule = {deployment = "5v2jIBVcI2DBszRNifkBpG"}
+fpsui = {deployment = "1YTuCOgOTyndBu35GbY9gv"}
+
+console = {deployment = "10Z84eFM12xWm6ga3kP7Bg"}
+editor = {deployment = "48clqN6iVI2NCiary7piT8"}
+package_manager = {deployment = "29fcBOtlOUguydordPfnO4"}
+
+# scene = {deployment = "1MF6MClfSdQVjHy8hJYIFN"}
+spraypaint = {deployment = "2yI2CS1lxBPy0BHBi7zvpU"}
+world_latency = {deployment = "4kd29PwX4Lrx26y8EBuwqb"}
+
+# *** replace afps zombie with a smarter zombie who can't approach if there's a wall in the way
+# zombie = {deployment = "5q5yniNRpHhu8jkmMorY1H"}
+zombie = {path = "../smartzombie"}

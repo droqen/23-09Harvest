@@ -1,5 +1,10 @@
 [workspace]
 
 members = [
+  "00_fps/front_page_zombie_rush",
   "00_fps/sceneloader_demo",
+  "00_fps/smartzombie",
 ]
+
+[workspace.dependencies]
+ambient_api = {git = "https://github.com/AmbientRun/Ambient.git", rev = "3864b39fa95427794aa3167054993cd1b02cf4d6"}

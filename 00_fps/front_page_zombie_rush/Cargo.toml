@@ -1,0 +1,25 @@
+[package]
+name = "front_page_zombie_rush"
+
+edition = "2021"
+publish = false
+version = "0.0.1"
+
+[dependencies]
+ambient_api = {workspace = true}
+glam = "0.24.1"
+regex = "1"
+
+[[bin]]
+name = "client_front_page_zombie_rush"
+path = "src/client.rs"
+required-features = ["client"]
+
+[[bin]]
+name = "server_front_page_zombie_rush"
+path = "src/server.rs"
+required-features = ["server"]
+
+[features]
+client = ["ambient_api/client"]
+server = ["ambient_api/server"]

@@ -1,0 +1,28 @@
+[package]
+content = {type = "Asset", models = true, animations = true, code = true}
+id = "smartzombie"
+name = "Smart Zombies"
+version = "0.0.1"
+
+[components]
+is_zombie = {type = "Empty", attributes = ["Networked", "Debuggable"]}
+zombie_hit_reaction_count = {type = "I32", attributes = [
+  "Networked",
+  "Debuggable",
+]}
+zombie_model_ref = {type = "EntityId", attributes = [
+  "Networked",
+  "Debuggable",
+]}
+zombie_step_frame_count = {type = "U32", attributes = [
+  "Networked",
+  "Debuggable",
+]}
+
+[messages.HitZombie.fields]
+id = "EntityId"
+
+[dependencies]
+afps_schema = {deployment = "4qcnuQpcxcMDogPdNsKl6s"}
+basic_character_animation = {deployment = "1gK2nUpWuGppV7wCqkAXIf"}
+unit_schema = {deployment = "54TrD8Ls6t2nTmF9qpXE6s"}
