@@ -3,3 +3,7 @@ content = {type = "Playable"}
 id = "sceneloader_demo"
 name = "sceneloader_demo"
 version = "0.0.1"
+
+[dependencies]
+afps_schema = {deployment = "oplAyTtnAZYKsROZk6Soe"}
+afps_zombie = {deployment = "19kKpJdDZ8FnEa3HKPbsLK"}
