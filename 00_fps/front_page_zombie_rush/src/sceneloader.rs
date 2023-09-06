@@ -2,6 +2,7 @@ pub struct GodotNode {
     pub name: String,
     pub pos: Option<Vec3>,
     pub rot: Option<Quat>,
+    pub siz: Option<Vec3>,
     pub path: Option<String>,
 }
 
@@ -12,8 +13,8 @@ fn main() {
 pub fn debug_nodes(nodes: &HashMap<String, GodotNode>) {
     for (_key, node) in nodes {
         println!(
-            "node\n\t~{}\n\t~p{:?}\n\t~r{:?}\n\t~{:?}",
-            node.name, node.pos, node.rot, node.path
+            "node\n\t~{}\n\t~po{:?}\n\t~rt{:?}\n\t~sz{:?}\n\t~{:?}",
+            node.name, node.pos, node.rot, node.siz, node.path
         );
     }
 }
@@ -35,6 +36,26 @@ pub fn test_get_nodes() -> HashMap<String, GodotNode> {
             .split(", ")
             .filter_map(|s| s.parse::<f32>().ok())
             .collect::<Vec<f32>>();
+
+        let (myscale, myrotation, mytranslation) = Mat4::from_mat3(Mat3 {
+            x_axis: Vec3 {
+                x: t[0],
+                z: t[1],
+                y: -t[2],
+            },
+            z_axis: Vec3 {
+                x: t[3],
+                z: t[4],
+                y: -t[5],
+            },
+            y_axis: -Vec3 {
+                x: t[6],
+                z: t[7],
+                y: -t[8],
+            },
+        })
+        .to_scale_rotation_translation();
+
         nodes.insert(
             cap[1].to_string(),
             GodotNode {
@@ -44,26 +65,8 @@ pub fn test_get_nodes() -> HashMap<String, GodotNode> {
                     z: t[10],
                     y: t[11],
                 }),
-                rot: Some(
-                    Quat::from_mat3(&Mat3 {
-                        x_axis: Vec3 {
-                            x: t[0],
-                            z: t[1],
-                            y: -t[2],
-                        },
-                        z_axis: Vec3 {
-                            x: t[3],
-                            z: t[4],
-                            y: -t[5],
-                        },
-                        y_axis: -Vec3 {
-                            x: t[6],
-                            z: t[7],
-                            y: -t[8],
-                        },
-                    }), // * Quat::from_rotation_z(90_f32.to_radians())
-                        // * Quat::from_rotation_z(1.5)
-                ),
+                rot: Some(myrotation),
+                siz: Some(myscale),
                 path: None,
             },
         );
@@ -79,6 +82,7 @@ pub fn test_get_nodes() -> HashMap<String, GodotNode> {
                     name: cap[1].to_string(),
                     pos: None,
                     rot: None,
+                    siz: None,
                     path: None,
                 },
             );
@@ -112,4 +116,4 @@ use std::collections::HashMap;
 
 use regex::Regex;
 
-use glam::f32::{Mat3, Quat, Vec3};
+use glam::f32::{Mat3, Mat4, Quat, Vec3};

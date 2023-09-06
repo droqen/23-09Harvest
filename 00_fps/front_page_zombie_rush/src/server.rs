@@ -5,7 +5,7 @@ use ambient_api::{
             components::aspect_ratio_from_window,
             concepts::make_perspective_infinite_reverse_camera,
         },
-        physics::components::plane_collider,
+        physics::components::{cube_collider, plane_collider},
         prefab::components::prefab_from_url,
         primitives::components::{cube, quad},
         transform::{
@@ -46,6 +46,7 @@ pub fn main() {
     for (_key, node) in nodes {
         let node_pos: Option<Vec3> = node.pos;
         let node_rot: Option<Quat> = node.rot;
+        let node_siz: Option<Vec3> = node.siz;
         match node.name.as_str() {
             "cube1" | "cube2" => {
                 println!(
@@ -56,8 +57,10 @@ pub fn main() {
                 Entity::new()
                     .with_merge(make_transformable())
                     .with(cube(), ())
+                    .with(cube_collider(), vec3(1., 1., 1.))
                     .with(translation(), node_pos.unwrap())
                     .with(rotation(), node_rot.unwrap())
+                    .with(scale(), node_siz.unwrap())
                     .spawn();
             }
             "camera" => {
@@ -71,15 +74,14 @@ pub fn main() {
             }
             _ => {
                 if let Some(path) = node.path {
-                    // spawn no buildings
-
-                    // Entity::new()
-                    //     .with_merge(make_transformable())
-                    //     // .with_default(cube())
-                    //     .with(translation(), node_pos.unwrap())
-                    //     .with(rotation(), node_rot.unwrap())
-                    //     .with(prefab_from_url(), packages::this::assets::url(&path))
-                    //     .spawn();
+                    Entity::new()
+                        .with_merge(make_transformable())
+                        .with(cube_collider(), vec3(4.8, 4.8, 9.0))
+                        .with(translation(), node_pos.unwrap())
+                        .with(rotation(), node_rot.unwrap())
+                        .with(scale(), node_siz.unwrap())
+                        .with(prefab_from_url(), packages::this::assets::url(&path))
+                        .spawn();
                 }
             }
         }
