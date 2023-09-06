@@ -93,6 +93,23 @@ pub async fn main() {
                 let player_pos = vec2(pos.x, pos.y);
                 let distance = (zombie_pos - player_pos).length();
                 if distance < min_distance {
+                    let mut wall_blocking = false;
+                    for hit in physics::raycast(
+                        zombie_pos.extend(0.5),
+                        (player_pos - zombie_pos).normalize().extend(0.),
+                    ) {
+                        if entity::has_component(hit.entity, components::is_zombie()) {
+                            continue; // other zombies cant block my sight
+                        } else if entity::has_component(hit.entity, is_player()) {
+                            break; // great! i see you
+                        } else {
+                            wall_blocking = true; // aww, a walls in the way
+                            break;
+                        }
+                    }
+                    if wall_blocking {
+                        continue; // can't see this player; good bye.
+                    }
                     min_distance = distance;
                     nearest_player_pos = Some(player_pos);
                 }
