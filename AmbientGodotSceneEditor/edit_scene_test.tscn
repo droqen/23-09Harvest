@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwcdxl4xkjgwh"]
+[gd_scene load_steps=14 format=3 uid="uid://cwcdxl4xkjgwh"]
 
 [ext_resource type="PackedScene" uid="uid://drliciusro4t" path="res://DanMeshes2/MSH_Building_002.glb" id="1_3kf6n"]
 [ext_resource type="PackedScene" uid="uid://bf4iy4xf866fb" path="res://DanMeshes2/MSH_Building_001.glb" id="2_mr7y2"]
@@ -13,10 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://7bh2hh72uacb" path="res://DanMeshes2/MSH_Building_Hole_004.glb" id="11_luqa8"]
 [ext_resource type="PackedScene" uid="uid://bv8n3mld1iheb" path="res://DanMeshes2/MSH_Building_Hole_005.glb" id="12_krffe"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_nts8p"]
+
 [node name="edit_scene_test" type="Node3D"]
 
 [node name="MSH_Building_002" parent="." instance=ExtResource("1_3kf6n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14866, 0, -1.56574)
+transform = Transform3D(2.12806, 0, 0, 0, 2.12806, 0, 0, 0, 2.12806, -1.16, 0, -20.082)
 
 [node name="MSH_Building_001" parent="." instance=ExtResource("2_mr7y2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66961, 0, 0.831661)
@@ -50,3 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5044, 3.8147e-06, 21.9606
 
 [node name="MSH_Building_Hole_005" parent="." instance=ExtResource("12_krffe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8307, -3.8147e-06, 24.0764)
+
+[node name="cube1" type="MeshInstance3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -4.374, 4, 47.972)
+mesh = SubResource("BoxMesh_nts8p")
