@@ -18,21 +18,38 @@ use ambient_api::{
 #[main]
 pub fn main() {
     // let main_camera_ent =
-    Entity::new()
-        .with_merge(make_perspective_infinite_reverse_camera())
-        .with(aspect_ratio_from_window(), EntityId::resources())
-        .with(main_scene(), ())
-        .with(translation(), vec3(5., 5., 5.))
-        .with(lookat_target(), vec3(0., 0., 0.))
-        .spawn();
+    // Entity::new()
+    //     .with_merge(make_perspective_infinite_reverse_camera())
+    //     .with(aspect_ratio_from_window(), EntityId::resources())
+    //     .with(main_scene(), ())
+    //     .with(translation(), vec3(5., 5., 5.))
+    //     .with(lookat_target(), vec3(0., 0., 0.))
+    //     .spawn();
 
-    Entity::new()
-        .with_merge(make_transformable())
-        .with(quad(), ())
-        .with(scale(), Vec3::splat(100.))
-        .spawn();
-
+    // Entity::new()
+    //     .with_merge(make_transformable())
+    //     .with(quad(), ())
+    //     .with(scale(), Vec3::splat(100.))
+    //     .spawn();
+    spawn_fps_player::init();
     load_scene_and_build_ents::init();
+}
+
+mod spawn_fps_player {
+    use crate::packages::fps_controller::components::{camera_distance, use_fps_controller};
+    use ambient_api::{prelude::*, core::player::components::is_player};
+    pub fn init() {
+        spawn_query(is_player()).bind(move |players| {
+            for (id, _) in players {
+                entity::add_components(
+                    id,
+                    Entity::new()
+                        .with(use_fps_controller(), ())
+                        .with(camera_distance(), 0.0),
+                );
+            }
+        });
+    }
 }
 
 mod sceneloader;
