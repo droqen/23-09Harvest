@@ -1,0 +1,25 @@
+[package]
+name = "atomic_fps"
+
+edition = "2021"
+publish = false
+version = "0.0.1"
+
+[dependencies]
+ambient_api = {git = "https://github.com/AmbientRun/Ambient.git", rev = "8e609a1677832200e9b4ae7ac54301b18e282895"}
+glam = "0.24.1"
+regex = "1"
+
+[[bin]]
+name = "client_atomic_fps"
+path = "src/client.rs"
+required-features = ["client"]
+
+[[bin]]
+name = "server_atomic_fps"
+path = "src/server.rs"
+required-features = ["server"]
+
+[features]
+client = ["ambient_api/client"]
+server = ["ambient_api/server"]

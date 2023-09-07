@@ -1,0 +1,5 @@
+[package]
+id = "atomic_fps"
+name = "atomic_fps"
+version = "0.0.1"
+content = { type = "Playable" }

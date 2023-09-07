@@ -1,6 +1,7 @@
 [workspace]
 
 members = [
+  "00_fps/atomic_fps",
   "00_fps/front_page_zombie_rush",
   "00_fps/sceneloader_demo",
   "00_fps/smartzombie",
