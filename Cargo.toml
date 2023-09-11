@@ -5,6 +5,8 @@ members = [
   "00_fps/front_page_zombie_rush",
   "00_fps/sceneloader_demo",
   "00_fps/smartzombie",
+
+  "01_nice/foggyday",
 ]
 
 [workspace.dependencies]
