@@ -1,0 +1,192 @@
+[gd_scene load_steps=11 format=3 uid="uid://buhkr8tjjf388"]
+
+[ext_resource type="PackedScene" uid="uid://y8bchgv7j5tl" path="res://00_plane_roamer/roamer_1st_person.tscn" id="1_bynp1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t5kwq"]
+
+[sub_resource type="Sky" id="Sky_m0yce"]
+sky_material = SubResource("ProceduralSkyMaterial_t5kwq")
+
+[sub_resource type="Environment" id="Environment_3llq5"]
+background_mode = 2
+sky = SubResource("Sky_m0yce")
+
+[sub_resource type="BoxMesh" id="BoxMesh_gtktj"]
+size = Vector3(5, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52nla"]
+size = Vector3(5, 5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8a5rq"]
+size = Vector3(13, 8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hvco"]
+size = Vector3(13, 8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hh2ww"]
+size = Vector3(6, 1, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tueh7"]
+size = Vector3(6, 1, 8)
+
+[node name="Pit" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3llq5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.0398606, 0.804662, 0.592394, -0.397491, -0.556705, 0.729439, 0.91674, -0.206395, 0.342036, 0, 0, 0)
+shadow_enabled = true
+
+[node name="TallPitWall" type="StaticBody3D" parent="."]
+transform = Transform3D(0.619574, 0, 0.784939, 0, 1, 0, -0.784939, 0, 0.619574, 2.45491, 1.70296, -4.08566)
+
+[node name="Cube" type="MeshInstance3D" parent="TallPitWall"]
+mesh = SubResource("BoxMesh_gtktj")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TallPitWall"]
+shape = SubResource("BoxShape3D_52nla")
+
+[node name="TallPitWall3" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.803286, 0, 0.595594, 0, 1, 0, -0.595594, 0, -0.803286, 5.71634, 2.70875, -4.54159)
+
+[node name="Cube" type="MeshInstance3D" parent="TallPitWall3"]
+mesh = SubResource("BoxMesh_gtktj")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TallPitWall3"]
+shape = SubResource("BoxShape3D_52nla")
+
+[node name="TallPitWall4" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.803286, 0, 0.595594, 0, 1, 0, -0.595594, 0, -0.803286, 9.13352, 2.70875, -2.56207)
+
+[node name="Cube" type="MeshInstance3D" parent="TallPitWall4"]
+mesh = SubResource("BoxMesh_gtktj")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TallPitWall4"]
+shape = SubResource("BoxShape3D_52nla")
+
+[node name="ReallyBigPitWall" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.414154, 0, 0.910207, 0, 1, 0, -0.910207, 0, -0.414154, 12.5121, 2.70875, 2.64274)
+
+[node name="Cube" type="MeshInstance3D" parent="ReallyBigPitWall"]
+mesh = SubResource("BoxMesh_8a5rq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReallyBigPitWall"]
+shape = SubResource("BoxShape3D_3hvco")
+
+[node name="ReallyBigPitWall2" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.699451, 0, -0.714681, 0, 1, 0, 0.714681, 0, -0.699451, 14.4457, 1.93203, 9.31682)
+
+[node name="Cube" type="MeshInstance3D" parent="ReallyBigPitWall2"]
+mesh = SubResource("BoxMesh_8a5rq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReallyBigPitWall2"]
+shape = SubResource("BoxShape3D_3hvco")
+
+[node name="ReallyBigPitWall3" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.724846, 0, 0.688911, 0, 1, 0, -0.688911, 0, -0.724846, 14.4457, 0.7497, 12.5362)
+
+[node name="Cube" type="MeshInstance3D" parent="ReallyBigPitWall3"]
+mesh = SubResource("BoxMesh_8a5rq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReallyBigPitWall3"]
+shape = SubResource("BoxShape3D_3hvco")
+
+[node name="ReallyBigPitWall4" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.5547, 0, 0.832051, 0, 1, 0, -0.832051, 0, -0.5547, 6.26987, 0.944124, 8.51812)
+
+[node name="Cube" type="MeshInstance3D" parent="ReallyBigPitWall4"]
+mesh = SubResource("BoxMesh_8a5rq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReallyBigPitWall4"]
+shape = SubResource("BoxShape3D_3hvco")
+
+[node name="ReallyBigPitWall5" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.5547, 0, 0.832051, 0, 1, 0, -0.832051, 0, -0.5547, 3.73415, 2.00416, 3.80905)
+
+[node name="Cube" type="MeshInstance3D" parent="ReallyBigPitWall5"]
+mesh = SubResource("BoxMesh_8a5rq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReallyBigPitWall5"]
+shape = SubResource("BoxShape3D_3hvco")
+
+[node name="PitFloor" type="StaticBody3D" parent="."]
+transform = Transform3D(0.619574, 0, 0.784939, 0, 1, 0, -0.784939, 0, 0.619574, 5.82067, 0, -1.41634)
+
+[node name="Cube" type="MeshInstance3D" parent="PitFloor"]
+mesh = SubResource("BoxMesh_hh2ww")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitFloor"]
+shape = SubResource("BoxShape3D_tueh7")
+
+[node name="PitFloor2" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.199539, 0, 0.97989, 0, 1, 0, -0.97989, 0, -0.199539, 4.18426, -0.237327, 1.54109)
+
+[node name="Cube" type="MeshInstance3D" parent="PitFloor2"]
+mesh = SubResource("BoxMesh_hh2ww")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitFloor2"]
+shape = SubResource("BoxShape3D_tueh7")
+
+[node name="PitFloor3" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.448555, 0, 0.893756, 0, 1, 0, -0.893756, 0, -0.448555, 11.0008, -0.496317, 1.81448)
+
+[node name="Cube" type="MeshInstance3D" parent="PitFloor3"]
+mesh = SubResource("BoxMesh_hh2ww")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitFloor3"]
+shape = SubResource("BoxShape3D_tueh7")
+
+[node name="PitFloor4" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.706576, 0, 0.707638, 0, 1, 0, -0.707638, 0, -0.706576, 11.0789, -0.766008, 7.99805)
+
+[node name="Cube" type="MeshInstance3D" parent="PitFloor4"]
+mesh = SubResource("BoxMesh_hh2ww")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitFloor4"]
+shape = SubResource("BoxShape3D_tueh7")
+
+[node name="PitFloor5" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.706576, 0, 0.707638, 0, 1, 0, -0.707638, 0, -0.706576, 5.78566, -1.13206, 5.43325)
+
+[node name="Cube" type="MeshInstance3D" parent="PitFloor5"]
+mesh = SubResource("BoxMesh_hh2ww")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitFloor5"]
+shape = SubResource("BoxShape3D_tueh7")
+
+[node name="PitFloor6" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.706576, 0, 0.707638, 0, 1, 0, -0.707638, 0, -0.706576, 8.92566, -1.13206, 12.6485)
+
+[node name="Cube" type="MeshInstance3D" parent="PitFloor6"]
+mesh = SubResource("BoxMesh_hh2ww")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitFloor6"]
+shape = SubResource("BoxShape3D_tueh7")
+
+[node name="TallPitWall2" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.246492, 0, 0.969145, 0, 1, 0, -0.969145, 0, -0.246492, 1.44456, 2.04739, -1.34261)
+
+[node name="Cube" type="MeshInstance3D" parent="TallPitWall2"]
+mesh = SubResource("BoxMesh_gtktj")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TallPitWall2"]
+shape = SubResource("BoxShape3D_52nla")
+
+[node name="Roamer1stPerson" parent="." instance=ExtResource("1_bynp1")]
+transform = Transform3D(-0.761799, 0, -0.647814, 0, 1, 0, 0.647814, 0, -0.761799, 4.1656, 1.55277, -2.64726)

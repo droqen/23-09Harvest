@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://djxentmc2ki1w"]
+
+[ext_resource type="PackedScene" uid="uid://y8bchgv7j5tl" path="res://00_plane_roamer/roamer_1st_person.tscn" id="1_4efto"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0esj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r3g71"]
+material = SubResource("StandardMaterial3D_y0esj")
+size = Vector2(999, 999)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_5qgwk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u4u21"]
+sky_top_color = Color(0.0196078, 0.203922, 0.356863, 1)
+sky_horizon_color = Color(0.141176, 0.145098, 0.152941, 1)
+ground_horizon_color = Color(0.121094, 0.15625, 0.140625, 1)
+ground_curve = 0.0254913
+
+[sub_resource type="Sky" id="Sky_m3s33"]
+sky_material = SubResource("ProceduralSkyMaterial_u4u21")
+
+[sub_resource type="Environment" id="Environment_m84as"]
+background_mode = 2
+sky = SubResource("Sky_m3s33")
+
+[node name="Underwater" type="Node3D"]
+
+[node name="Roamer1stPerson" parent="." instance=ExtResource("1_4efto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0404981, -1.19209e-07, -0.00669312)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_r3g71")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_5qgwk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m84as")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.823622, 0.56714, 2.45458e-08, -0.383992, 0.557648, 0.73592, 0.417369, -0.60612, 0.677069, 0, 0, 0)
+light_color = Color(0.207843, 0.156863, 0.141176, 1)
+shadow_enabled = true

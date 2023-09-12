@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1vmcqw8rxdnv"]
+
+[ext_resource type="PackedScene" uid="uid://dvhj23mo2mcml" path="res://03_scene_ExtraDeepPit/really_lumpy_wall.glb" id="1_43anu"]
+[ext_resource type="PackedScene" uid="uid://c2sgbrkrjwovj" path="res://03_scene_ExtraDeepPit/a_chunky_tile.glb" id="2_bwsmp"]
+[ext_resource type="PackedScene" uid="uid://y8bchgv7j5tl" path="res://00_plane_roamer/roamer_1st_person.tscn" id="3_b5xff"]
+[ext_resource type="PackedScene" uid="uid://db0sctdyvvo6w" path="res://03_scene_ExtraDeepPit/really_tall_lumpy_wall.glb" id="4_vd3hq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xdtef"]
+
+[sub_resource type="Sky" id="Sky_4ox8a"]
+sky_material = SubResource("ProceduralSkyMaterial_xdtef")
+
+[sub_resource type="Environment" id="Environment_0ju7m"]
+background_mode = 2
+sky = SubResource("Sky_4ox8a")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o3hwn"]
+size = Vector2(20, 20)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t67y7"]
+
+[node name="ReallyDeepPit" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0ju7m")
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.447663, -0.642966, -0.621444, -0.331471, -0.764779, 0.552486, -0.830497, -0.041337, -0.555487, 0, 0, 0)
+light_color = Color(1, 0.756863, 0.596078, 1)
+shadow_enabled = true
+
+[node name="really_lumpy_wall" parent="." instance=ExtResource("1_43anu")]
+transform = Transform3D(0.99795, -0.0599579, 0.022398, 0.0612947, 0.996019, -0.0647311, -0.0184277, 0.0659713, 0.997651, -1.83103, 1.19209e-07, -1.00699)
+visible = false
+
+[node name="really_lumpy_wall2" parent="." instance=ExtResource("1_43anu")]
+transform = Transform3D(0.27564, 0.0454395, 0.960186, 0.0612947, 0.996019, -0.0647311, -0.959305, 0.0766968, 0.271758, -0.869786, 1.07288e-06, 2.83949)
+visible = false
+
+[node name="really_lumpy_wall3" parent="." instance=ExtResource("1_43anu")]
+transform = Transform3D(0.687059, -0.0891464, -0.721112, 0.0612947, 0.996018, -0.0647311, 0.724012, 0.000273693, 0.689787, 6.03442, -0.328266, 0.3668)
+visible = false
+
+[node name="really_lumpy_wall4" parent="." instance=ExtResource("1_43anu")]
+transform = Transform3D(0.687059, -0.0891464, -0.721112, 0.0612947, 0.996018, -0.0647311, 0.724012, 0.000273693, 0.689787, 7.38538, -0.328266, -4.53685)
+visible = false
+
+[node name="really_lumpy_wall5" parent="." instance=ExtResource("1_43anu")]
+transform = Transform3D(-0.871163, 0.0217327, -0.490513, 0.0612947, 0.996018, -0.0647311, 0.487153, -0.0864571, -0.869026, 3.96822, -0.791799, -5.50203)
+visible = false
+
+[node name="really_lumpy_wall6" parent="." instance=ExtResource("1_43anu")]
+transform = Transform3D(-0.534979, 0.0875346, 0.840318, 0.0612947, 0.996018, -0.0647311, -0.842639, 0.0168772, -0.538215, -2.39434, -0.238013, -7.71512)
+visible = false
+
+[node name="really_lumpy_wall7" parent="." instance=ExtResource("1_43anu")]
+transform = Transform3D(-0.743248, 0.0888335, 0.663092, 0.0612947, 0.996018, -0.0647311, -0.666202, -0.00746724, -0.745733, -5.21675, -0.238013, -2.27815)
+visible = false
+
+[node name="a_chunky_tile" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.784085, -0.944724, -0.0149829)
+visible = false
+
+[node name="a_chunky_tile2" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5999, -0.944724, 2.29545)
+visible = false
+
+[node name="a_chunky_tile3" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.733382, -0.944724, 1.95343)
+visible = false
+
+[node name="a_chunky_tile4" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65025, -0.944723, -0.48592)
+visible = false
+
+[node name="a_chunky_tile5" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(0.992984, 0, 0.118248, 0, 1, 0, -0.118248, 0, 0.992984, -0.375612, -0.944724, -4.5858)
+visible = false
+
+[node name="a_chunky_tile6" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(0.992984, 0, 0.118248, 0, 1, 0, -0.118248, 0, 0.992984, -0.912499, -0.944724, -2.19511)
+visible = false
+
+[node name="a_chunky_tile7" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(0.992984, 0, 0.118248, 0, 1, 0, -0.118248, 0, 0.992984, 1.36397, -0.944724, -2.81064)
+visible = false
+
+[node name="a_chunky_tile8" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(0.992984, 0, 0.118248, 0, 1, 0, -0.118248, 0, 0.992984, 1.98596, -0.944723, -5.34129)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_o3hwn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_t67y7")
+
+[node name="player" parent="." instance=ExtResource("3_b5xff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23725, 1.13639, -4.74514)
+
+[node name="really_tall_lumpy_wall" parent="." instance=ExtResource("4_vd3hq")]
+transform = Transform3D(0.531487, 0, -0.847066, 0, 1, 0, 0.847066, 0, 0.531487, -3.43963, 0, 5.18844)
+visible = false
+
+[node name="really_tall_lumpy_wall2" parent="." instance=ExtResource("4_vd3hq")]
+transform = Transform3D(0.756345, 0, 0.654173, 0, 1, 0, -0.654173, 0, 0.756345, 2.27583, 0, 6.58814)
+visible = false
+
+[node name="really_tall_lumpy_wall7" parent="." instance=ExtResource("4_vd3hq")]
+transform = Transform3D(-0.0946469, 0, 0.995511, 0, 1, 0, -0.995511, 0, -0.0946469, -5.75224, 0, -1.39148)
+visible = false
+
+[node name="really_tall_lumpy_wall3" parent="." instance=ExtResource("4_vd3hq")]
+transform = Transform3D(0.256205, 0, 0.966622, 0, 1, 0, -0.966622, 0, 0.256205, 5.95867, 0, 1.22219)
+visible = false
+
+[node name="really_tall_lumpy_wall4" parent="." instance=ExtResource("4_vd3hq")]
+transform = Transform3D(-0.0584875, 0, 0.998288, 0, 1, 0, -0.998288, 0, -0.0584875, 10.0535, -0.387376, -7.87815)
+visible = false
+
+[node name="really_tall_lumpy_wall5" parent="." instance=ExtResource("4_vd3hq")]
+transform = Transform3D(-0.977769, 0, -0.209687, 0, 1, 0, 0.209687, 0, -0.977769, 5.71605, -0.387376, -11.8546)
+visible = false
+
+[node name="really_tall_lumpy_wall6" parent="." instance=ExtResource("4_vd3hq")]
+transform = Transform3D(-0.689594, 0, -0.724196, 0, 1, 0, 0.724196, 0, -0.689594, -0.0939012, -0.387376, -8.92183)
+visible = false
+
+[node name="a_chunky_tile9" parent="." instance=ExtResource("2_bwsmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29223, 0, -5.50739)

@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://d222e72tf6dli"]
+
+[ext_resource type="PackedScene" uid="uid://cvp3slow4hlnv" path="res://00_plane_roamer/roamer_3rd_person.tscn" id="1_iavks"]
+[ext_resource type="Material" uid="uid://di2e531c6iryw" path="res://05_scene_Desert/bad_sand_mat.tres" id="2_p50yx"]
+[ext_resource type="Script" path="res://05_scene_Desert/DesertFluctuatingFog.gd" id="3_kgpcr"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_x83fb"]
+material = ExtResource("2_p50yx")
+radius = 10.0
+height = 20.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c88ax"]
+radius = 10.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8n44e"]
+
+[sub_resource type="Sky" id="Sky_rq3li"]
+sky_material = SubResource("ProceduralSkyMaterial_8n44e")
+
+[sub_resource type="Environment" id="Environment_p847r"]
+background_mode = 2
+sky = SubResource("Sky_rq3li")
+fog_enabled = true
+fog_density = 0.1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mwbui"]
+material = ExtResource("2_p50yx")
+size = Vector2(99999, 99999)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ufg6f"]
+
+[node name="Desert" type="Node3D"]
+
+[node name="Roamer3rdPerson" parent="." instance=ExtResource("1_iavks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8572, 4.1759, 0.625762)
+
+[node name="BigSphereMound" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.051, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigSphereMound"]
+mesh = SubResource("SphereMesh_x83fb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigSphereMound"]
+shape = SubResource("SphereShape3D_c88ax")
+
+[node name="BigSphereMound2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9025, -4.93722, 36.1697)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigSphereMound2"]
+mesh = SubResource("SphereMesh_x83fb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigSphereMound2"]
+shape = SubResource("SphereShape3D_c88ax")
+
+[node name="BigSphereMound3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9903, -7.80904, 31.1655)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigSphereMound3"]
+mesh = SubResource("SphereMesh_x83fb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigSphereMound3"]
+shape = SubResource("SphereShape3D_c88ax")
+
+[node name="BigSphereMound4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6207, -6.84289, 22.283)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigSphereMound4"]
+mesh = SubResource("SphereMesh_x83fb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigSphereMound4"]
+shape = SubResource("SphereShape3D_c88ax")
+
+[node name="BigSphereMound5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26257, -4.60193, -7.33839)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigSphereMound5"]
+mesh = SubResource("SphereMesh_x83fb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigSphereMound5"]
+shape = SubResource("SphereShape3D_c88ax")
+
+[node name="BigSphereMound6" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.34775, -8.50286, 2.47368)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigSphereMound6"]
+mesh = SubResource("SphereMesh_x83fb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigSphereMound6"]
+shape = SubResource("SphereShape3D_c88ax")
+
+[node name="BigSphereMound7" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71085, -1.41373, -6.50106)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigSphereMound7"]
+mesh = SubResource("SphereMesh_x83fb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigSphereMound7"]
+shape = SubResource("SphereShape3D_c88ax")
+
+[node name="BigSphereMound8" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5499, -8.61149, -17.1794)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigSphereMound8"]
+mesh = SubResource("SphereMesh_x83fb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigSphereMound8"]
+shape = SubResource("SphereShape3D_c88ax")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p847r")
+script = ExtResource("3_kgpcr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.869159, 0.494534, 0, -0.494534, 0.869159, -3.72386, 0, 42.1919)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_mwbui")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_ufg6f")
