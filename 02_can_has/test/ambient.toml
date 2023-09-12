@@ -1,0 +1,5 @@
+[package]
+id = "test"
+name = "test"
+version = "0.0.1"
+content = { type = "Playable" }
