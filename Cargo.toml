@@ -7,6 +7,9 @@ members = [
   "00_fps/smartzombie",
 
   "01_nice/foggyday",
+  
+  "02_can_has/test",
+  "02_can_has/modelgame",
 ]
 
 [workspace.dependencies]
