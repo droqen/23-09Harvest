@@ -10,6 +10,10 @@ members = [
   
   "02_can_has/test",
   "02_can_has/modelgame",
+  "02_can_has/space_sound",
+
+  "03_fogmod/storm_noise",
+  "03_fogmod/body_heat",
 ]
 
 [workspace.dependencies]

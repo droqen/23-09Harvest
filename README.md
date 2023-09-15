@@ -1,6 +1,10 @@
 # 23-09Harvest
 fresh out of the maze landing. until september's harvest moon.
 
+# 03_fogmod
+
+A pair of mods for my `a_foggy_scene`
+
 # Sep 5
 - [...] Just get a scene working using FPS assets
 

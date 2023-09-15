@@ -1,0 +1,9 @@
+[package]
+id = "body_heat"
+name = "body_heat"
+version = "0.0.1"
+content = { type = "Mod", for_playables = ["a_foggy_scene"] }
+description = "Nearby players will prevent you from getting cold quite as fast."
+
+[dependencies]
+a_foggy_scene = { deployment = "4dQ7fb2oa3v9FdaroGExjT" }

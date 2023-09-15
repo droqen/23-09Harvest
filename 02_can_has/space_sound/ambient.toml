@@ -1,0 +1,8 @@
+[package]
+id = "space_sound"
+name = "space_sound"
+version = "0.0.1"
+content = { type = "Playable" }
+
+[components]
+is_space_sound_emitter = { type = "Empty", attributes = ["Networked"]}

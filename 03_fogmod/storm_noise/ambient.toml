@@ -1,0 +1,9 @@
+[package]
+id = "storm_noise"
+name = "storm_noise"
+version = "0.0.1"
+content = { type = "Mod", for_playables = ["a_foggy_scene"] }
+description = "Adds storm noise to a foggy scene."
+
+[dependencies]
+a_foggy_scene = { deployment = "4dQ7fb2oa3v9FdaroGExjT" }
