@@ -1,0 +1,23 @@
+[package]
+name = "valentino"
+
+edition = "2021"
+publish = false
+version = "0.0.1"
+
+[dependencies]
+ambient_api = "0.3.0-nightly-2023-09-15"
+
+[[bin]]
+name = "client_valentino"
+path = "src/client.rs"
+required-features = ["client"]
+
+[[bin]]
+name = "server_valentino"
+path = "src/server.rs"
+required-features = ["server"]
+
+[features]
+client = ["ambient_api/client"]
+server = ["ambient_api/server"]

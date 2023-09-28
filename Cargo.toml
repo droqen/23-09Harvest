@@ -11,9 +11,13 @@ members = [
   "02_can_has/test",
   "02_can_has/modelgame",
   "02_can_has/space_sound",
+  "02_can_has/dinamo",
+  "02_can_has/anim_test",
 
   "03_fogmod/storm_noise",
   "03_fogmod/body_heat",
+
+  # "04_Concepts/valentino",
 ]
 
 [workspace.dependencies]

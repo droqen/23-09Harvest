@@ -1,0 +1,6 @@
+[package]
+id = "munm2mnsy01cot4pth9mcl87t8dn0faf"
+name = "anim_test"
+version = "0.0.1"
+content = { type = "Playable" }
+ambient_version = "0.3.0-nightly-2023-09-26"

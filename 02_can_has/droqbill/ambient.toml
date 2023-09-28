@@ -1,0 +1,9 @@
+[package]
+id = "x8wl9bh2gwt1kqxv53ia3kre4iql08xd"
+name = "droqbill"
+version = "0.0.1"
+content = { type = "Playable" }
+ambient_version = "0.3.0-nightly-2023-09-26"
+
+[components]
+droqbill = { type = "Empty" }

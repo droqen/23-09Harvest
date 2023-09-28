@@ -1,0 +1,23 @@
+[package]
+name = "anim_test"
+
+edition = "2021"
+publish = false
+version = "0.0.1"
+
+[dependencies]
+ambient_api = { git = "https://github.com/AmbientRun/Ambient.git", tag = "v0.3.0-nightly-2023-09-26" }
+
+[[bin]]
+name = "anim_test_client"
+path = "src/client.rs"
+required-features = ["client"]
+
+[[bin]]
+name = "anim_test_server"
+path = "src/server.rs"
+required-features = ["server"]
+
+[features]
+client = ["ambient_api/client"]
+server = ["ambient_api/server"]
