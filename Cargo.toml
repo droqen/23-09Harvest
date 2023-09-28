@@ -17,8 +17,18 @@ members = [
   "03_fogmod/storm_noise",
   "03_fogmod/body_heat",
 
+  "nothing",
+
   # "04_Concepts/valentino",
 ]
+resolver = "2"
+
+[workspace.package]
+rust-version = "1.70.0"
+version = "0.3.0-dev"
 
 [workspace.dependencies]
-ambient_api = {git = "https://github.com/AmbientRun/Ambient.git", rev = "3864b39fa95427794aa3167054993cd1b02cf4d6"}
+ambient_api = { path = "api", version = "0.3.0-dev" }
+
+# [workspace.dependencies]
+# ambient_api = { git = "https://github.com/AmbientRun/Ambient.git", tag = "v0.3.0-nightly-2023-09-27" }

@@ -3,7 +3,6 @@ use ambient_api::{
         camera::concepts::{
             PerspectiveInfiniteReverseCamera, PerspectiveInfiniteReverseCameraOptional,
         },
-        model::components::model_from_url,
         primitives::components::quad,
         transform::components::{lookat_target, translation},
     },
@@ -24,13 +23,6 @@ pub fn main() {
     .make()
     .with(lookat_target(), vec3(0., 0., 0.))
     .spawn();
-
-    // Entity::new()
-    //     .with(
-    //         model_from_url(),
-    //         packages::this::assets::url("material_chicken.glb"),
-    //     )
-    //     .spawn();
 
     Entity::new()
         .with(translation(), vec3(0., 0., 0.))
