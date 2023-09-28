@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://uwm0tnj0o4aa"]
+[gd_scene load_steps=9 format=3 uid="uid://uwm0tnj0o4aa"]
 
 [ext_resource type="PackedScene" uid="uid://doqqrij317vb3" path="res://01_dans_bldgs/models/MSH_Building_001.glb" id="1_vcgap"]
 [ext_resource type="PackedScene" uid="uid://cvp3slow4hlnv" path="res://00_plane_roamer/roamer_3rd_person.tscn" id="2_ct5dw"]
 [ext_resource type="PackedScene" uid="uid://cw3tyyl2sgyt2" path="res://08_scene_BeachWithLighthouse/lighthouse.glb" id="3_slvbw"]
 [ext_resource type="PackedScene" uid="uid://dvhj23mo2mcml" path="res://03_scene_ExtraDeepPit/really_lumpy_wall.glb" id="4_un2hq"]
+[ext_resource type="PackedScene" uid="uid://dcbx0h4t4s13k" path="res://12_scene_SnowstormMaze/brokenutilitypole.glb" id="5_wmgvw"]
 
 [sub_resource type="Environment" id="Environment_tc6ps"]
 background_mode = 1
@@ -125,3 +126,9 @@ transform = Transform3D(-2.65815, 0, 1.1983, 0, 2.91577, 0, -1.1983, 0, -2.65815
 
 [node name="really_lumpy_wall6" parent="." instance=ExtResource("4_un2hq")]
 transform = Transform3D(-2.90769, 0.132769, 0.171511, 0.178374, 2.77551, 0.875474, -0.123395, 0.88354, -2.77594, 1.91383, -1.57304, 34.9487)
+
+[node name="brokenutilitypole" parent="." instance=ExtResource("5_wmgvw")]
+transform = Transform3D(2.76547, 0, 0, 0, 2.76547, 0, 0, 0, 2.76547, -39.5475, -0.267707, 37.0234)
+
+[node name="brokenutilitypole2" parent="." instance=ExtResource("5_wmgvw")]
+transform = Transform3D(0.447197, 0, 2.72908, 0, 2.76547, 0, -2.72908, 0, 0.447197, -98.5406, -0.267707, 43.4795)
